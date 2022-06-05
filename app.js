@@ -15,11 +15,12 @@ let randomNumber;
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-randomNumber = getRndInteger(1, 100);
+randomNumber = getRndInteger(1, 10);
 // console.log(randomNumber)
-input.focus()
+input.focus();
 
 //! *******************Solution
+
 
 const guessTheNumber = () => {
   if (life.innerText > 1) {
@@ -28,25 +29,26 @@ const guessTheNumber = () => {
       life.innerText--;
       input.value = "";
       input.focus();
-
+      
     } else if (input.value > randomNumber) {
       won.innerText = "Decrease the Number Entered";
       life.innerText--;
       input.value = "";
       input.focus();
-      reset.style.display='none'
+      
 
     } else if (input.value < randomNumber) {
       won.innerText = "Increase the number entered";
       life.innerText--;
       input.value = "";
       input.focus();
-      reset.style.display='none'
-        
+      
     }
   } else {
+    life.innerText--;
     won.innerText = `Sorry You Lost The Game
     You Should Try Again.`;
+    input.value = "";
   }
 };
 

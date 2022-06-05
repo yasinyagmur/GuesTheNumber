@@ -21,15 +21,17 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
+  font-size: 3rem;
+  margin-bottom: 7rem;
+
 }
 .btn {
   display: flex;
   align-items: center;
   min-width: max-content;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   align-items: center;
+
 }
 .btn input {
   font-size: 1.3rem;
@@ -59,5 +61,10 @@ body {
   border-radius: 10px;
   border: none;
   padding: .8rem;
+  margin-top: 3rem;
+}
+.container .title p{
+  font-size: 2.7rem;
+  font-weight: 400;
 }
 
