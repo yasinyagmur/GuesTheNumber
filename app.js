@@ -15,7 +15,7 @@ let randomNumber;
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-randomNumber = getRndInteger(1, 10);
+randomNumber = getRndInteger(1, 100);
 // console.log(randomNumber)
 input.focus();
 
@@ -26,9 +26,11 @@ const guessTheNumber = () => {
   if (life.innerText > 1) {
     if (input.value == randomNumber) {
       won.innerText = "Congratulations You Won The Game!!!";
-      life.innerText--;
+      life.innerText--
       input.value = "";
       input.focus();
+      document.querySelector('.container').style.backgroundImage = "url(./image/Brain-Wallpaper-HD-36697.png)";
+      won.style.color = 'white'
       
     } else if (input.value > randomNumber) {
       won.innerText = "Decrease the Number Entered";
