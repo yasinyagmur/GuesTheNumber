@@ -1,2 +1,2 @@
-### - [GuessTheNumber](https://yasinyagmur.github.io/GuesTheNumber/)
+### - [GuessTheNumber](https://yasinyagmur.github.io/GuessTheNumber/)
 ![](./image/guessTheNumber.png)
