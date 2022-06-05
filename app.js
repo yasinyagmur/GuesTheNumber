@@ -1,4 +1,4 @@
-//! ***************Varialbles
+//! ***************Varialbles****************
 const input = document.querySelector("#user-input");
 console.log(input.innerText);
 
@@ -19,32 +19,28 @@ randomNumber = getRndInteger(1, 100);
 // console.log(randomNumber)
 input.focus();
 
-//! *******************Solution
-
+//! *******************Solution*******************
 
 const guessTheNumber = () => {
   if (life.innerText > 1) {
     if (input.value == randomNumber) {
       won.innerText = "Congratulations You Won The Game!!!";
-      life.innerText--
+      life.innerText--;
       input.value = "";
       input.focus();
-      document.querySelector('.container').style.backgroundImage = "url(./image/Brain-Wallpaper-HD-36697.png)";
-      won.style.color = 'white'
-      
+      document.querySelector(".container").style.backgroundImage =
+        "url(./image/Brain-Wallpaper-HD-36697.png)";
+      won.style.color = "white";
     } else if (input.value > randomNumber) {
       won.innerText = "Decrease the Number Entered";
       life.innerText--;
       input.value = "";
       input.focus();
-      
-
     } else if (input.value < randomNumber) {
       won.innerText = "Increase the number entered";
       life.innerText--;
       input.value = "";
       input.focus();
-      
     }
   } else {
     life.innerText--;
