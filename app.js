@@ -1,17 +1,59 @@
 //! ***************Varialbles
-const input = document.querySelector('#input');
-// console.log(input)
+const input = document.querySelector("#user-input");
+console.log(input.innerText);
 
-const check = document.querySelector('#check')
+const check = document.querySelector("#check");
 // console.log(check)
 
-const remainder = document.querySelector('#remainder');
+const life = document.querySelector("#life");
 
-const won =document.querySelector('#won');
+const won = document.querySelector("#won");
 
-const reset = document.querySelector('#reset');
+const reset = document.querySelector("#reset");
 
-let randomNumber = () =>{
-    return Math.floor(Math.random() * (max - min + 1) + min)
+let randomNumber;
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+randomNumber = getRndInteger(1, 100);
+// console.log(randomNumber)
+input.focus()
+
+//! *******************Solution
+
+const guessTheNumber = () => {
+  if (life.innerText > 1) {
+    if (input.value == randomNumber) {
+      won.innerText = "Congratulations You Won The Game!!!";
+      life.innerText--;
+      input.value = "";
+      input.focus();
+
+    } else if (input.value > randomNumber) {
+      won.innerText = "Decrease the Number Entered";
+      life.innerText--;
+      input.value = "";
+      input.focus();
+      reset.style.display='none'
+
+    } else if (input.value < randomNumber) {
+      won.innerText = "Increase the number entered";
+      life.innerText--;
+      input.value = "";
+      input.focus();
+      reset.style.display='none'
+        
+    }
+  } else {
+    won.innerText = `Sorry You Lost The Game
+    You Should Try Again.`;
+  }
 };
-console.log(randomNumber)
+
+check.addEventListener("click", guessTheNumber);
+
+const repeat = () => {
+  location.reload();
+};
+
+reset.addEventListener("click", repeat);
