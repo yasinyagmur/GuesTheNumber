@@ -51,6 +51,7 @@ const guessTheNumber = () => {
     life.innerText = "";
     check.style.display = "none";
     input.style.display = "none";
+    document.querySelector(".remaining").innerText = ""
   }
   input.value = "";
 };
