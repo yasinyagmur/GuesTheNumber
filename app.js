@@ -18,7 +18,7 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 randomNumber = getRndInteger(1, 100);
-console.log(randomNumber);
+// console.log(randomNumber);
 input.focus();
 
 //! *******************Solution*******************
