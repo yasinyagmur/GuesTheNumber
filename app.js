@@ -18,13 +18,13 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 randomNumber = getRndInteger(1, 100);
-// console.log(randomNumber);
+console.log(randomNumber);
 input.focus();
 
 //! *******************Solution*******************
 
 const guessTheNumber = () => {
-  if (life.innerText > 1) {
+  if (life.innerText > 1|| input.value==randomNumber) {
     if (input.value == randomNumber) {
       won.innerText = "Congratulations You Won The Game!!!";
       life.innerText = randomNumber;
