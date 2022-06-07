@@ -18,7 +18,7 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 randomNumber = getRndInteger(1, 100);
-// console.log(randomNumber);
+console.log(randomNumber);
 input.focus();
 
 //! *******************Solution*******************
@@ -27,9 +27,10 @@ const guessTheNumber = () => {
   if (life.innerText > 1) {
     if (input.value == randomNumber) {
       won.innerText = "Congratulations You Won The Game!!!";
-      life.innerText--;
+      life.innerText = randomNumber;
       input.value = "";
       input.focus();
+      document.querySelector(".remaining").innerText = "";
       check.style.display = "none";
       input.style.display = "none";
     } else if (input.value > randomNumber) {
@@ -51,7 +52,7 @@ const guessTheNumber = () => {
     life.innerText = "";
     check.style.display = "none";
     input.style.display = "none";
-    document.querySelector(".remaining").innerText = ""
+    document.querySelector(".remaining").innerText = "";
   }
   input.value = "";
 };
